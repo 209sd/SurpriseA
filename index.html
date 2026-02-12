@@ -254,6 +254,45 @@
             animation: fadeIn 0.8s;
         }
 
+        .love-letter {
+            animation: fadeIn 1s;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .letter-content {
+            text-align: left;
+        }
+
+        .letter-title {
+            color: #4da3ff;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+        }
+
+        .letter-body {
+            color: #b8c5d6;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .letter-body p {
+            margin-bottom: 20px;
+            text-indent: 30px;
+        }
+
+        .letter-signature {
+            text-align: right;
+            font-style: italic;
+            color: #4da3ff;
+            margin-top: 40px;
+            text-indent: 0 !important;
+        }
+
         .continue-btn {
             margin-top: 30px;
             background: linear-gradient(135deg, #4da3ff 0%, #1e5a9e 100%);
@@ -267,6 +306,9 @@
             transition: all 0.3s;
             font-family: 'Georgia', serif;
             box-shadow: 0 0 20px rgba(77, 163, 255, 0.5);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .continue-btn:hover {
@@ -313,7 +355,7 @@
     <div class="hearts" id="hearts"></div>
     
     <div class="attempt-counter" id="attemptCounter" style="display: none;">
-        Escape attempts: <span id="attempts">0</span> 🐾
+        Escape attempts: <span id="attempts">0</span>
     </div>
 
     <div class="container">
@@ -322,15 +364,15 @@
             <div class="gif-container">
                 <img src="kitten.png" alt="black kitten with blue eyes">
             </div>
-            <h1>✨ Hey Amal ✨</h1>
+            <h1>Hey Amal</h1>
             <p class="love-note">
                 I made something special for you...<br>
                 Something that reminds me of those beautiful blue eyes<br>
                 that light up every room you walk into.<br><br>
                 Just like this little black kitten with sapphire eyes,<br>
-                you're rare, precious, and absolutely enchanting. 💙
+                you're rare, precious, and absolutely enchanting.
             </p>
-            <button class="btn continue-btn" id="continueBtn">Continue 💙</button>
+            <button class="btn continue-btn" id="continueBtn">Continue</button>
         </div>
 
         <!-- Device Selection Screen -->
@@ -338,21 +380,42 @@
             <div class="gif-container">
                 <img src="kitten.png" alt="adorable black kitten with blue eyes">
             </div>
-            <h1>💙 Quick Question 💙</h1>
+            <h1>Quick Question</h1>
             <p class="question">What device are you using right now?</p>
             <p class="love-note" style="font-size: 0.9em; margin-bottom: 20px;">
-                (I want to make sure everything looks purrfect for you)
+                (I want to make sure everything looks perfect for you)
             </p>
             <div class="device-grid">
                 <button class="device-btn" data-device="phone">
-                    📱<br>Phone
+                    Phone
                 </button>
                 <button class="device-btn" data-device="tablet">
-                    📲<br>Tablet
+                    Tablet
                 </button>
                 <button class="device-btn" data-device="laptop">
-                    💻<br>Laptop/PC
+                    Laptop/PC
                 </button>
+            </div>
+        </div>
+
+        <!-- Love Letter Screen -->
+        <div class="love-letter" id="letterScreen" style="display: none;">
+            <div class="letter-content">
+                <h1 class="letter-title">To Amal,</h1>
+                <div class="letter-body">
+                    <p>Every time you smile, the whole world seems to slow down. It's like watching the sunrise after the longest night – warm, gentle, and absolutely breathtaking.</p>
+                    
+                    <p>I find myself thinking about the way your eyes light up when you laugh, how your presence makes even ordinary moments feel extraordinary. You have this incredible ability to make everything around you more beautiful, more meaningful.</p>
+                    
+                    <p>The way you see the world inspires me. Your kindness, your strength, the gentle way you care about the little things – like those mesmerizing blue eyes on a little black kitten that somehow remind me of the wonder you bring into my life.</p>
+                    
+                    <p>I love how you make me want to be better, how being around you feels like coming home. You're not just someone I want in my life – you're the person I want to share every moment with.</p>
+                    
+                    <p>Your smile could light up the darkest room. Your laugh is my favorite sound. And every day with you is a gift I never want to take for granted.</p>
+                    
+                    <p class="letter-signature">Forever yours,<br>Someone who adores every part of you</p>
+                </div>
+                <button class="btn continue-btn" id="letterContinueBtn">Continue</button>
             </div>
         </div>
 
@@ -361,15 +424,15 @@
             <div class="gif-container">
                 <img src="kitten.png" alt="black kitten with blue eyes" id="questionGif">
             </div>
-            <h1>💙 Be My Valentine, Amal? 💙</h1>
+            <h1>Be My Valentine, Amal?</h1>
             <p class="question">Will you be my Valentine?</p>
             <p class="love-note" id="giftMessage">
                 Just like those mesmerizing blue eyes,<br>
-                you bring light to my darkest days.<br>
-                You make everything more beautiful. 💙
+                you bring light to my world.<br>
+                You make everything more beautiful.
             </p>
             <div class="buttons">
-                <button class="btn" id="yesBtn">Yes! 💙</button>
+                <button class="btn" id="yesBtn">Yes</button>
                 <button class="btn" id="noBtn">No</button>
             </div>
         </div>
@@ -379,12 +442,12 @@
             <div class="gif-container">
                 <img src="kitten.png" alt="happy black kitten">
             </div>
-            <h2>You said yes, Amal! 🎉</h2>
-            <div class="celebration">💙 🐱 ✨ 🌙 💫</div>
+            <h2>You said yes, Amal!</h2>
+            <div class="celebration">✨ 🌟 ✨</div>
             <p class="message">
                 Like a kitten finding its forever home,<br>
                 my heart has found its place with you.<br><br>
-                Thank you for making this Valentine's Day purr-fect! 💙
+                Thank you for making this Valentine's Day perfect.
             </p>
         </div>
     </div>
@@ -392,8 +455,10 @@
     <script>
         const introScreen = document.getElementById('introScreen');
         const deviceScreen = document.getElementById('deviceScreen');
+        const letterScreen = document.getElementById('letterScreen');
         const questionScreen = document.getElementById('questionScreen');
         const continueBtn = document.getElementById('continueBtn');
+        const letterContinueBtn = document.getElementById('letterContinueBtn');
         const deviceBtns = document.querySelectorAll('.device-btn');
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
@@ -412,7 +477,7 @@
             deviceScreen.style.display = 'block';
         });
 
-        // Device selection
+        // Device selection - go to love letter
         deviceBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 selectedDevice = btn.getAttribute('data-device');
@@ -426,9 +491,15 @@
                 }
                 
                 deviceScreen.style.display = 'none';
-                questionScreen.style.display = 'block';
-                attemptCounter.style.display = 'block';
+                letterScreen.style.display = 'block';
             });
+        });
+
+        // Love letter continue - go to question
+        letterContinueBtn.addEventListener('click', () => {
+            letterScreen.style.display = 'none';
+            questionScreen.style.display = 'block';
+            attemptCounter.style.display = 'block';
         });
 
         // Create twinkling stars
@@ -482,18 +553,18 @@
             yesBtnSize += 0.1;
             yesBtn.style.transform = `scale(${yesBtnSize})`;
             
-            // Change button text with kitten-themed messages
+            // Change button text with thoughtful messages
             const noTexts = [
                 "No",
-                "Mew sure? 🐱",
-                "Really? 🥺",
+                "Are you sure?",
+                "Really?",
+                "Think again",
+                "Please reconsider",
                 "Don't break my heart",
-                "The kitten is sad now",
-                "Please reconsider? 🐾",
-                "*sad meow*",
                 "One more chance?",
-                "You're kitten me! 😿",
-                "Don't paws this chance!"
+                "You sure about this?",
+                "Think it over?",
+                "Please?"
             ];
             noBtn.textContent = noTexts[Math.min(attempts, noTexts.length - 1)];
         });
